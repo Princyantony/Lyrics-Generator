@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Lyric Generator</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="/submit" method="post">
+        <label> Artist</label>
+        <input type="text" name="artist" required />
+        <label>Song</label>
+        <input type="text" name="song" required />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <div>
+      <% if (Array.isArray(content)) { %> <% content.forEach(line => { %>
+      <p><%= line %></p>
+      <% }) %> <% } else { %>
+      <p><%= content %></p>
+      <% } %>
+    </div>
+  </body>
+</html>
